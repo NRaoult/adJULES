@@ -1,0 +1,28 @@
+This folder contains the current version of adJULES.
+
+The main code can be found in the ADJULES_code folder. There should be not much need 
+to change any of this fundamental code. 
+
+!!!!
+NB the file path giving the location of the adJULES/release folder need to be set in set_paths.R
+!!!!
+
+When conducting an experiment, adJULES is run in a temperatory directory (found in temp). This allows the possibility of running multiple experiments in parrallel. 
+
+For at least the first 2 arguments
+	-arg1 : temperatory folder name
+	-arg2 : experiment PFT
+	-arg3 : subset (all,single,ran5,boreal,rest,ever,deci) DEFAULT=all
+	-arg4 : alpha  (either value, or search optimal via 'find' or 'brute') DEFAULT=find
+
+Either - run in command line: ./create_temp.R arg1 agr2 etc.
+       - change directory to temp/temp_arg1
+       - run.R either in terminal or in R session
+       - remove temperory directory once experiment is finished
+
+Or     - run in command line: ./run.sh arg1 arg2 etc.
+       - check progress in arg1_output.out
+
+The results of experiment will be put into results directory.
+
+If you wish to run experiments in the code directory, the first line in the R terminal should be: code <- getwd()
